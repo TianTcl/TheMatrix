@@ -55,11 +55,11 @@ def multiply(m_one, m_two):
                     m_new_member = 0
                     for m_each_mem_index in range(m_one.get('col')):
                         m_new_member += m_one.get('value')[m_each_row_index][m_each_mem_index][0]/m_one.get('value')[m_each_row_index][m_each_mem_index][1] * m_two.get('value')[m_each_mem_index][m_each_col_index][0]/m_two.get('value')[m_each_mem_index][m_each_col_index][1]
-                        if type(m_new_member) == float and m_new_member.is_integer() or type(m_new_member) == int:
-                            m_new_member = [int(m_new_member), 1]
-                        else:
-                            m_new_member = str(fnd(float(m_new_member)).limit_denominator()).split("/")
-                            m_new_member = [int(m_new_member[0]), int(m_new_member[1])]
+                    if type(m_new_member) == float and m_new_member.is_integer() or type(m_new_member) == int:
+                        m_new_member = [int(m_new_member), 1]
+                    else:
+                        m_new_member = str(fnd(float(m_new_member)).limit_denominator()).split("/")
+                        m_new_member = [int(m_new_member[0]), int(m_new_member[1])]
                     m_new_row.append(m_new_member)
                 m_new_matrix.append(m_new_row)
             m_new_name = m_one.get('name') + m_two.get('name')
